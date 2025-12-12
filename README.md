@@ -23,5 +23,5 @@
 Clone the repository
 
 **Usage**
-*Work-in-progess* 
-*should add the '.h' files needed* 
+*Work-in-progess* <br>
+*should add the '.h' files needed* <br>
