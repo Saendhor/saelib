@@ -7,9 +7,6 @@
 - sorting
 - data structures
 - miscellaneous
-    - swap
-    - findmin / findmax
-    - printarray
 
 **Tools Used**
 - GCC 15.2.1
