@@ -1,2 +1,5 @@
 # ignore all files in any directory named "test/"
 test/
+
+#ignore
+github.txt
