@@ -2,7 +2,7 @@
 # Sorting algorithms and complexity
 
 
-## Comparative sorting algorithms
+## *Comparative sorting algorithms*
 
 | Name           | Best        | Average     | Worst       | Stable | InPlace | Method       |
 | :------------: | :---------: | :---------: | :---------: | :----: | :-----: | :----------: |
@@ -14,7 +14,7 @@
 | Heap Sort      | O(n log(n)) | O(n log(n)) | O(n log(n)) | no     | yes     | Selection    |
 
 
-## Non-Comparative corting algorithms
+## *Non-Comparative corting algorithms*
 
 | Name          | Time-Complexity | Stable | InPlace |
 | :-----------: | :-------------: | :----: | :-----: |
