@@ -15,5 +15,6 @@
 //INCLUDE FOR SORTING
 #include "sorting/bubblesort/bubblesort.h"
 #include "sorting/insertionsort/insertionsort.h"
+#include "sorting/selectionsort/selectionsort.h"
 
 #endif

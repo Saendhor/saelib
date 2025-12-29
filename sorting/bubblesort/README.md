@@ -9,7 +9,7 @@ The algorithm, which is a comparison sort, is named for the way the larger eleme
 ## *PSEUDOCODE*
 
 ~~~ruby
-bubblesort (A)
+bubblesort(A)
     for i ← 0 to length[A] - 1
         swapped  ← false
             for j ← 0 to length[A] - i - 1

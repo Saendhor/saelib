@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include "../../misc/swap.h"
 
-int bubblesort_i (int* array, int size) {
+int bubblesort(double* array, int size) {
     bool swapped;
     for (int i = 0; i < size - 1; i++) {
         //reset 'swapped' value to false

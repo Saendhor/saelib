@@ -9,7 +9,7 @@ You split the cards into two groups: the sorted cards and the unsorted cards. Th
 ## *PSEUDOCODE*
 
 ~~~ruby
-insertionsort (A)
+insertionsort(A)
     for j ← 1 to length[A]
         key ← A[j]
         # Insert A[j] in the already ordered sequence A[0, 1, ... ,j-1]

@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "../../misc/swap.h"
 
-int selectionsort_i (int array[], int size) {
+int selectionsort(double array[], int size) {
     int min_index;
     for (int i = 0; i < size - 1; i++) {
         min_index = i;
