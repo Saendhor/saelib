@@ -72,7 +72,7 @@ int mergesort_support(double input[], int inf, int sup) {
 int mergesort(double input[], int size) {
     //Support function that allows us to invoke mergesort like other sorting methods
     if (mergesort_support(input, 0, size-1) != 0) {
-        printf("Errort while trying to perform mergesort\n");
+        printf("Error while trying to perform mergesort\n");
         return 1;
     }
     return 0;
