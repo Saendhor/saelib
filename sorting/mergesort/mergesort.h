@@ -51,14 +51,14 @@ int merge(double tomerge[], int inf, int pivot, int sup) {
 }
 
 
-int mergesort(double input[], int inf, int sup) {
+int mergesort_support(double input[], int inf, int sup) {
     if (inf < sup) {
         int pivot = inf + (sup - inf) / 2; //already floor since is int
 
         //Invoke recursively mergesort on left side
-        mergesort(input, inf, pivot);
+        mergesort_support(input, inf, pivot);
         //Invoke recursively mergesort on right side
-        mergesort(input, pivot + 1, sup);
+        mergesort_support(input, pivot + 1, sup);
         //Merge the results of the mergesort invocations
         if (merge(input, inf, pivot, sup) != 0) {
             printf("Error while attempting to merge with indexes\n\
@@ -66,7 +66,15 @@ int mergesort(double input[], int inf, int sup) {
             return 1; //ERROR
         }
     }
-    
+    return 0;
+}
+
+int mergesort(double input[], int size) {
+    //Support function that allows us to invoke mergesort like other sorting methods
+    if (mergesort_support(input, 0, size-1) != 0) {
+        printf("Errort while trying to perform mergesort\n");
+        return 1;
+    }
     return 0;
 }
 
