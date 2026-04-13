@@ -1,15 +1,14 @@
 #ifndef RADIXSORT_H
 #define RADIXSORT_H
 
-#include "../../misc/findmax.h"
-
 void custom_countingsort(int* to_order, int size, int exp) {
     int temp[size];
     int count[10] = {0};
 
     //Store number of occurences in count[]
     for (int i = 0; i < size; i++) {
-        count[(to_order[i] / exp) % 10]++;
+        int digit = count[(to_order[i] / exp) % 10]++;
+        count[digit]++;
     }
 
     //Cumulative counting
@@ -19,6 +18,7 @@ void custom_countingsort(int* to_order, int size, int exp) {
 
     //Build output array
     for (int i = size - 1; i >= 0; i--) {
+        int digit = count[(to_order[i] / exp) % 10]++;
         temp[count[(to_order[i] / exp) % 10] - 1] = to_order[i];
         count[(to_order[i] / exp) % 10]--;
     }
@@ -29,9 +29,17 @@ void custom_countingsort(int* to_order, int size, int exp) {
     }
 }
 
-int radixsort(int* input, int digits) {
-    int max = findmax_i(input);
-    int size = (int) sizeof(input) / sizeof(int);
+int radixsort(int* input, int size) {
+    if (size <= 0) {
+        return -1;
+    }
+
+    //find max
+    int max = input[0];
+    for (int i = 1; i < size; i++) {
+        if (input[i] > max) max = input[i];
+    }
+
     for (int exp = 1; max / exp > 0; exp *= 10) {
         custom_countingsort(input, size, exp);    
     }
