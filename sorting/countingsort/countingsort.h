@@ -2,17 +2,19 @@
 #define COUNTINGSORT_H
 
 #include <stdlib.h>
-#include "../../misc/findmax.h"
+#include <string.h>
+#include "../../misc/array_findmax.h"
 
-int countingsort_i(int* input) {
-    int size = (int) sizeof(input) / sizeof(int);
-    int max = findmax_i(input);
+int countingsort(int* input, int size) {
+    if (size <= 0) {
+        return -1;
+    }
+
+    int max = array_findmax_i(input, size);
 
     //create C array and initialize it to 0
-    int num_values[max];
-    for (int i = 0; i < max; i++) {
-        num_values[i] = 0;
-    }
+    int* num_values = (int*)calloc(max + 1, sizeof(int));
+    if (num_values == NULL) return -1; //check memory
 
     //increase the amount of occurences of the A[j] value in C
     for (int j = 0; j < size; j++) {
@@ -21,13 +23,13 @@ int countingsort_i(int* input) {
 
     //define the cumulative amount in the array C
     for (int i = 1; i < max; i++) {
-        num_values[i] = num_values[i] + num_values[i - 1];
+        num_values[i] += num_values[i - 1];
     }
 
-    //creating the array of the ordered input
+    //creating the array of the ordered input (stable)
     int ordered_input[size];
     for (int j = size; j > 0; j--) {
-        ordered_input[num_values[input[j]]] = input[j];
+        ordered_input[num_values[input[j]] - 1] = input[j];
         num_values[input[j]]--;
     }
 
@@ -36,6 +38,7 @@ int countingsort_i(int* input) {
         input[i] = ordered_input[i];
     }
 
+    free(num_values);
     return 0;
 }
 
