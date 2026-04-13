@@ -11,15 +11,15 @@ typedef struct heap {
 } heap_t;
 
 int fleft(int index) {
-    return (2 * (index + 1)) - 1;
+    return 2 * index + 1;
 }
 
 int fparent(int index) {
-    return (index + 1) / 2;
+    return (index - 1) / 2;
 }
 
 int fright(int index) {
-    return 2 * (index + 1); // (2 * (index + 1) + 1) - 1;
+    return 2 * index +2;
 }
 
 #endif
