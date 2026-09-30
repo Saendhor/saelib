@@ -7,10 +7,10 @@ For example, for input [1, 4, 0, 2, 1, 1], the size of array is 6 and range of e
 If range of input array is of order more than n Log n where n is size of the array,
 then we can better sort the array using a standard comparison based sorting algorithm like Merge Sort.
 
-<blockquote>
-/*  PSEUDOCODE
+## *PSEUDOCODE*
 
-    COUNTINGSORT(A, k) \
+~~~ruby
+    countingsort(A, k) \
         n ← length(A) \
         C ← new array(k)
         for i ← 0 to k  // Initialize to 0
@@ -23,8 +23,7 @@ then we can better sort the array using a standard comparison based sorting algo
         for i ← n - 1 to 0
             B[ C[ A[i] ] ] ← A[i] //the slot of B is the number of items before given item A[i] stated in C
             C[A[i]] ← C[A[i]] - 1 //decrease the amount of items since 1 has been placed
-*/
-</blockquote>
+~~~
 
 # TODO LIST
 
