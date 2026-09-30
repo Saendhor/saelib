@@ -4,7 +4,8 @@
 #include <stdio.h>
 
 int insertionsort(double array[], int size) {
-	int key, i;
+	double key;
+	int i;
 	//printf("[INSERTIONSORT] Items to sort: %d\n", size);
 	for (int j = 1; j < size; j++) {
 		key = array[j];
